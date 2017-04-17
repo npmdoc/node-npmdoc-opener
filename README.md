@@ -1,9 +1,11 @@
 # api documentation for  [opener (v1.4.3)](https://github.com/domenic/opener#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-opener.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-opener) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-opener.svg)](https://travis-ci.org/npmdoc/node-npmdoc-opener)
 #### Opens stuff, like webpages and files and executables, cross-platform
 
-[![NPM](https://nodei.co/npm/opener.png?downloads=true)](https://www.npmjs.com/package/opener)
+[![NPM](https://nodei.co/npm/opener.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/opener)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-opener/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-opener_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-opener/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-opener/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-opener/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-opener/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-opener/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-opener/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +20,6 @@
 {
     "author": {
         "name": "Domenic Denicola",
-        "email": "d@domenic.me",
         "url": "https://domenic.me/"
     },
     "bin": {
@@ -46,13 +47,11 @@
     "main": "opener.js",
     "maintainers": [
         {
-            "name": "domenic",
-            "email": "domenic@domenicdenicola.com"
+            "name": "domenic"
         }
     ],
     "name": "opener",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/domenic/opener.git"
@@ -63,16 +62,6 @@
     "version": "1.4.3"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module opener](#apidoc.module.opener)
-
-
-
-# <a name="apidoc.module.opener"></a>[module opener](#apidoc.module.opener)
 
 
 
