@@ -61,12 +61,129 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.opener">module opener</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.opener.opener">
+            function <span class="apidocSignatureSpan"></span>opener
+            <span class="apidocSignatureSpan">(args, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.opener.toString">
+            function <span class="apidocSignatureSpan">opener.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.opener.toString">module opener.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.opener.toString.toString">
+            function <span class="apidocSignatureSpan">opener.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.opener" id="apidoc.module.opener">module opener</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.opener.opener" id="apidoc.element.opener.opener">
+        function <span class="apidocSignatureSpan"></span>opener
+        <span class="apidocSignatureSpan">(args, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function opener(args, options, callback) {
+    // http://stackoverflow.com/q/1480971/3191, but see below for Windows.
+    var command = process.platform === &#x22;win32&#x22; ? &#x22;cmd&#x22; :
+                  process.platform === &#x22;darwin&#x22; ? &#x22;open&#x22; :
+                  &#x22;xdg-open&#x22;;
+
+    if (typeof args === &#x22;string&#x22;) {
+        args = [args];
+    }
+
+    if (typeof options === &#x22;function&#x22;) {
+        callback = options;
+        options = {};
+    }
+
+    if (options &#x26;&#x26; typeof options === &#x22;object&#x22; &#x26;&#x26; options.command) {
+        if (process.platform === &#x22;win32&#x22;) {
+            // *always* use cmd on windows
+            args = [options.command].concat(args);
+        } else {
+            command = options.command;
+        }
+    }
+
+    if (process.platform === &#x22;win32&#x22;) {
+        // On Windows, we really want to use the &#x22;start&#x22; command. But, the rules regarding arguments with spaces, and
+        // escaping them with quotes, can get really arcane. So the easiest way to deal with this is to pass off the
+        // responsibility to &#x22;cmd /c&#x22;, which has that logic built in.
+        //
+        // Furthermore, if &#x22;cmd /c&#x22; double-quoted the first parameter, then &#x22;start&#x22; will interpret it as a window title,
+        // so we need to add a dummy empty-string window title: http://stackoverflow.com/a/154090/3191
+        //
+        // Additionally, on Windows ampersand needs to be escaped when passed to &#x22;start&#x22;
+        args = args.map(function(value) {
+            return value.replace(/&#x26;/g, &#x27;^&#x26;&#x27;);
+        });
+        args = [&#x22;/c&#x22;, &#x22;start&#x22;, &#x27;&#x22;&#x22;&#x27;].concat(args);
+    }
+
+    return childProcess.execFile(command, args, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.opener.toString" id="apidoc.element.opener.toString">
+        function <span class="apidocSignatureSpan">opener.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.opener.toString" id="apidoc.module.opener.toString">module opener.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.opener.toString.toString" id="apidoc.element.opener.toString.toString">
+        function <span class="apidocSignatureSpan">opener.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

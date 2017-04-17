@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/domenic/opener#readme"
-
-    >opener (v1.4.3)</a>
+    <a href="https://github.com/domenic/opener#readme">opener (v1.4.3)</a>
 </h1>
 <h4>Opens stuff, like webpages and files and executables, cross-platform</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.opener">module opener</a><ol>
 
@@ -109,21 +102,21 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function opener(args, options, callback) {
     // http://stackoverflow.com/q/1480971/3191, but see below for Windows.
-    var command = process.platform === &#x22;win32&#x22; ? &#x22;cmd&#x22; :
-                  process.platform === &#x22;darwin&#x22; ? &#x22;open&#x22; :
-                  &#x22;xdg-open&#x22;;
+    var command = process.platform === "win32" ? "cmd" :
+                  process.platform === "darwin" ? "open" :
+                  "xdg-open";
 
-    if (typeof args === &#x22;string&#x22;) {
+    if (typeof args === "string") {
         args = [args];
     }
 
-    if (typeof options === &#x22;function&#x22;) {
+    if (typeof options === "function") {
         callback = options;
         options = {};
     }
 
-    if (options &#x26;&#x26; typeof options === &#x22;object&#x22; &#x26;&#x26; options.command) {
-        if (process.platform === &#x22;win32&#x22;) {
+    if (options &amp;&amp; typeof options === "object" &amp;&amp; options.command) {
+        if (process.platform === "win32") {
             // *always* use cmd on windows
             args = [options.command].concat(args);
         } else {
@@ -131,19 +124,19 @@
         }
     }
 
-    if (process.platform === &#x22;win32&#x22;) {
-        // On Windows, we really want to use the &#x22;start&#x22; command. But, the rules regarding arguments with spaces, and
+    if (process.platform === "win32") {
+        // On Windows, we really want to use the "start" command. But, the rules regarding arguments with spaces, and
         // escaping them with quotes, can get really arcane. So the easiest way to deal with this is to pass off the
-        // responsibility to &#x22;cmd /c&#x22;, which has that logic built in.
+        // responsibility to "cmd /c", which has that logic built in.
         //
-        // Furthermore, if &#x22;cmd /c&#x22; double-quoted the first parameter, then &#x22;start&#x22; will interpret it as a window title,
+        // Furthermore, if "cmd /c" double-quoted the first parameter, then "start" will interpret it as a window title,
         // so we need to add a dummy empty-string window title: http://stackoverflow.com/a/154090/3191
         //
-        // Additionally, on Windows ampersand needs to be escaped when passed to &#x22;start&#x22;
+        // Additionally, on Windows ampersand needs to be escaped when passed to "start"
         args = args.map(function(value) {
-            return value.replace(/&#x26;/g, &#x27;^&#x26;&#x27;);
+            return value.replace(/&amp;/g, '^&amp;');
         });
-        args = [&#x22;/c&#x22;, &#x22;start&#x22;, &#x27;&#x22;&#x22;&#x27;].concat(args);
+        args = ["/c", "start", '""'].concat(args);
     }
 
     return childProcess.execFile(command, args, options, callback);
@@ -193,3 +186,4 @@
     ]
 </div>
 </div>
+</body></html>
