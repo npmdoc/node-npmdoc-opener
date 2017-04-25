@@ -1,4 +1,7 @@
-# api documentation for  [opener (v1.4.3)](https://github.com/domenic/opener#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-opener.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-opener) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-opener.svg)](https://travis-ci.org/npmdoc/node-npmdoc-opener)
+# npmdoc-opener
+
+#### basic api documentation for  [opener (v1.4.3)](https://github.com/domenic/opener#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-opener.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-opener) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-opener.svg)](https://travis-ci.org/npmdoc/node-npmdoc-opener)
+
 #### Opens stuff, like webpages and files and executables, cross-platform
 
 [![NPM](https://nodei.co/npm/opener.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/opener)
